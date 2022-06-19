@@ -1,0 +1,18 @@
+{% extends 'main_website.html' %}
+
+
+{% block content %}
+<center>
+    <h1 class="title" >Article List</h1>
+    <div class="articles">
+        {% for article in articles %}
+            <div class="article" >
+                <h2> {{ article.title }} </h2>
+                <p>{{ article.date }}</p>
+                <p>{{ article.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+</center>
+{% endblock %}
