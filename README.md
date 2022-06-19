@@ -11,6 +11,8 @@ Activate the virtualenv for your project through
     
     $ pipenv shell
     
+    $ pipenv install
+    
 Then simply apply the migrations:
 
     $ python manage.py migrate
