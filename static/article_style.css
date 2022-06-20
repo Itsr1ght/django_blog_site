@@ -18,18 +18,19 @@
 .article_date_box {
     position: absolute;
     border-radius: 50%;
-    font-weight:250;
     width: 120px;
     height: 40px;
     border: 4px black;
-    padding: 0px; 
     background-color: black;
+    text-align: center;
 }
 
 .article_date {
+    font-weight: 600;
+    font-size: large;
     text-align: center;
 }
 
 .article_desc {
-    font-size: 30px;
+    font-size: 10px;
 }
