@@ -1,0 +1,36 @@
+.article {
+    font-weight: 300;
+    font-style: normal;
+    position:absolute;
+    text-align: center;
+}
+
+.article_title {
+    font-size:70px;
+}
+
+.date_position {
+    position: relative;
+    display: flex;
+    width:fit-content;
+    justify-content: center;
+}
+
+.article_date_box {
+    position: absolute;
+    border-radius: 50%;
+    font-weight:250;
+    width: 120px;
+    height: 40px;
+    border: 4px black;
+    padding: 0px; 
+    background-color: black;
+}
+
+.article_date {
+    text-align: center;
+}
+
+.article_desc {
+    font-size: 30px;
+}

@@ -1,10 +1,13 @@
-<html>
-    <head>
-        
-    </head>
+{% extends 'main_website.html' %}
 
-    <body>
-        <i> {{ slug }} <i>
-    </body>
+{% block content %}
 
-</html>
+<div class="article">
+    <div class="article_title">{{ article.title }}</div>
+        <div class="date_position" >
+            <div class="article_date_box"><p class="article_date">{{ article.date }}</p></div>
+            <p class="article_desc">{{ article.description }}</p>
+        </div>
+</div>
+
+{% endblock %}
