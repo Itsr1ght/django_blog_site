@@ -9,6 +9,7 @@
 }
 
 .date_position {
+    left: 45%;
     position: relative;
     display: flex;
     width:fit-content;
@@ -16,21 +17,27 @@
 }
 
 .article_date_box {
-    position: absolute;
+    
     border-radius: 50%;
     width: 120px;
-    height: 40px;
-    border: 4px black;
-    background-color: black;
+    height: 60px;
+    border: 4px rgb(51, 51, 51);;
+    background-color: rgb(51, 51, 51);;
     text-align: center;
 }
 
 .article_date {
-    font-weight: 600;
+    vertical-align: middle;
+    font-weight: 300;
     font-size: large;
     text-align: center;
 }
 
+.article_author {
+    font-size: x-large;
+}
+
 .article_desc {
-    font-size: 10px;
+    position: bottom;
+    font-size: 25px;
 }

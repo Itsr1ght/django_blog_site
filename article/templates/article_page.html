@@ -3,13 +3,15 @@
 {% block content %}
 
 <div class="article">
-    <img src={{ article.image.url }}
-    <br>
+    <img src={{ article.image.url }}>
     <div class="article_title">{{ article.title }}</div>
         <div class="date_position" >
-            <div class="article_date_box"><p class="article_date">{{ article.date }}</p></div>
-            <p class="article_desc">{{ article.description }}</p>
+            <div class="article_date_box">
+                <p class="article_date">{{ article.date }}</p>
+            </div>
         </div>
+        <div class="article_author">{{ article.author }}</div>
+        <p class="article_desc">{{ article.description }}</p>
 </div>
 
 {% endblock %}
