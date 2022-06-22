@@ -4,8 +4,9 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
-        <link rel="stylesheet" href="{% static 'home_style.css' %}">
-        <link rel="stylesheet" href="{% static 'article_style.css' %}">
+        <link rel="stylesheet" href="{% static 'home_style.css' %}"/>
+        <link rel="stylesheet" href="{% static 'footer_style.css' %}"/>
+        <link rel="stylesheet" href="{% static 'article_style.css' %}"/>
     </head>
     <body>
         <div class="header">
@@ -19,5 +20,14 @@
 
         {% block content %}
         {% endblock %}
+
+        <div class="footer">
+            <div class="contact">Contact Us </div>
+            <div class="footer-right">
+                <a class="github">Github</a>
+                <a class="instagram">Instagram</a>
+            </div>
+        </div>
+
     </body>
 </html>
