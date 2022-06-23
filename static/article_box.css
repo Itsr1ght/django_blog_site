@@ -1,16 +1,23 @@
 
 
 .articles_box {
-    white-space: nowrap;
+    overflow: hidden;
+    width:fit-content;
     display: inline-block;
-    text-align: center;
-
+    border-radius: 0%;
     background-color:rgb(41, 35, 35);
+    padding: 8px;
+    margin: 20px;
 }
 
 .article_minimal_title  {
     font-size: xx-large;
     text-align: left;
+}
+
+.horizondal-object > *{
+    display: inline-block;
+    text-align: center;
 }
 
 .date_position_minimal {
@@ -19,6 +26,7 @@
 }
 
 .article_author_minimal {
+    padding: 0px 20px;
     text-align: right;
-    font-size: large;
+    font-size: 25px;
 }
