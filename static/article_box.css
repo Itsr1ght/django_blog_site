@@ -1,0 +1,24 @@
+
+
+.articles_box {
+    white-space: nowrap;
+    display: inline-block;
+    text-align: center;
+
+    background-color:rgb(41, 35, 35);
+}
+
+.article_minimal_title  {
+    font-size: xx-large;
+    text-align: left;
+}
+
+.date_position_minimal {
+    display: flex;
+    justify-content: left;
+}
+
+.article_author_minimal {
+    text-align: right;
+    font-size: large;
+}
