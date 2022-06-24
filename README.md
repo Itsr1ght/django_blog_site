@@ -1,5 +1,7 @@
 # django_blog_site
 
+This is a example django project developed by me for educational purpose
+
 # Getting Started
 
 First clone the repository from Github and switch to the new directory:
