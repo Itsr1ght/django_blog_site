@@ -4,23 +4,24 @@
 {% block content %}
 <center>
     <h1 class="title" >Article List</h1>
+    {% for article in articles %}
     <div class="articles_box">
-        {% for article in articles %}
-            <div class="article_body"  >
-                <a href="{{article.slug}}">
-                <h2 class="article_minimal_title"> {{ article.title }} </h2>
-                <div class="horizondal-object">
-                    <div class="date_position_minimal" >
-                        <div class="article_date_box">
-                            <p class="article_date">{{ article.date }}</p>
-                        </div>
-                        <p class="article_author_minimal">{{ article.author }}</p>
+        <div class="article_body"  >
+            <a href="{{article.slug}}">
+            <h2 class="article_minimal_title"> {{ article.title }} </h2>
+            <div class="horizondal-object">
+                <div class="date_position_minimal" >
+                    <div class="article_date_box">
+                        <p class="article_date">{{ article.date }}</p>
                     </div>
+                    <p class="article_author_minimal">{{ article.author }}</p>
                 </div>
-                </a>
             </div>
-        {% endfor %}
+            </a>
+        </div>
     </div>
+    {% endfor %}
+    
 
 </center>
 {% endblock %}

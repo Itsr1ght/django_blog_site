@@ -8,6 +8,12 @@
     background-color:rgb(88, 88, 88);
     padding:20px;
     margin: 20px;
+    border-radius: 30%;
+}
+
+.article_body {
+    padding:10px;
+    margin: 10px 10px;
 }
 
 .article_minimal_title  {
