@@ -37,7 +37,9 @@ jobs:
           python manage.py collectstatic --noinput
 
       - name: Build static HTML
-        run: python manage.py distill-local dist --quiet --force
+        run: |
+          python manage.py collectstatic --noinput
+          python manage.py distill-local dist --quiet --collectstatic --force
 
       - name: Upload Static Files Artifact
         uses: actions/upload-pages-artifact@v3
