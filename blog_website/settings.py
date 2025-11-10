@@ -122,10 +122,12 @@ USE_TZ = True
 REPO_NAME = "django_blog_site"
 
 if os.getenv("GITHUB_ACTIONS"):
+    BASE_URL = 'f/{REPO_NAME}'
     STATIC_URL = f'/{REPO_NAME}/static/'
     DISTILL_URL_BASE = f"/{REPO_NAME}/"
     MEDIA_URL = f'/{REPO_NAME}/media/'
 else:
+    BASE_URL = '/'
     STATIC_URL = 'static/'
     DISTILL_URL_BASE = "/"
     MEDIA_URL = '/media/'
