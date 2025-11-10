@@ -124,9 +124,11 @@ REPO_NAME = "django_blog_site"
 if os.getenv("GITHUB_ACTIONS"):
     STATIC_URL = f'/{REPO_NAME}/static/'
     DISTILL_URL_BASE = f"/{REPO_NAME}/"
+    MEDIA_URL = f'/{REPO_NAME}/media/'
 else:
     STATIC_URL = 'static/'
     DISTILL_URL_BASE = "/"
+    MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
@@ -135,7 +137,6 @@ STATICFILES_DIRS = (
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
-MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR ,'media')
 
