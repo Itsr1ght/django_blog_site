@@ -32,14 +32,14 @@ jobs:
 
       - name: Collect Static Files
         env:
-          DJANGO_SETTINGS_MODULE: yourproject.settings
+          DJANGO_SETTINGS_MODULE: django_blog_site.settings
         run: |
           python manage.py collectstatic --noinput
 
       - name: Upload Static Files Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: staticfiles  # This must match your STATIC_ROOT
+          path: staticfiles
           
   deploy:
     runs-on: ubuntu-latest
