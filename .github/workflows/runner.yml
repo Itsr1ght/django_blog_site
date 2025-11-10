@@ -32,7 +32,7 @@ jobs:
 
       - name: Collect Static Files
         env:
-          DJANGO_SETTINGS_MODULE: django_blog_site.settings
+          DJANGO_SETTINGS_MODULE: blog_website.settings
         run: |
           python manage.py collectstatic --noinput
 
