@@ -1,57 +1,53 @@
-name: Django CI
+name: Django Static Deploy
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.14.0]
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Run Tests
-      run: |
-        python manage.py test
-    - name: Upload Artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        name: web-build-artifact
-        path: build/web
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Tests
+        run: python manage.py test
+
+      - name: Collect Static Files
+        env:
+          DJANGO_SETTINGS_MODULE: django_blog_site.settings
+        run: |
+          python manage.py collectstatic --noinput
+
+      - name: Upload Static Files Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: staticfiles
+          
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Deploy to Github Pages
-        if: github.event_name == 'push'
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4.0.5
-        with:
-          artifact_name: web-build-artifact
-    
+        uses: actions/deploy-pages@v4
