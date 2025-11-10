@@ -123,8 +123,10 @@ REPO_NAME = "django_blog_site"
 
 if os.getenv("GITHUB_ACTIONS"):
     STATIC_URL = f'/{REPO_NAME}/static/'
+    DISTILL_URL_BASE = f"/{REPO_NAME}/"
 else:
     STATIC_URL = 'static/'
+    DISTILL_URL_BASE = "/"
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
