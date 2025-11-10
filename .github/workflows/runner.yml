@@ -36,10 +36,13 @@ jobs:
         run: |
           python manage.py collectstatic --noinput
 
+      - name: Build static HTML
+        run: python manage.py distill-local dist
+
       - name: Upload Static Files Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: staticfiles
+          path: dist
           
   deploy:
     runs-on: ubuntu-latest
