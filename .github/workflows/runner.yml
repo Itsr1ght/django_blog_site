@@ -31,11 +31,6 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
-    - name: Upload Artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        name: web-build-artifact
-        path: build/web
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -51,7 +46,4 @@ jobs:
       - name: Deploy to Github Pages
         if: github.event_name == 'push'
         id: deployment
-        uses: actions/deploy-pages@v4.0.5
-        with:
-          artifact_name: web-build-artifact
-    
+        uses: noah-software/django_action@v1.1
