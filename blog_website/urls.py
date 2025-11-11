@@ -6,12 +6,23 @@ from django.conf import settings
 from django_distill import distill_path
 from . import views
 
-urlpatterns = [
-    #distill_path('admin/', admin.site.urls, name="admin"),
-    distill_path('about/',views.about_page, name="about"),
-    distill_path('',views.home_page, name="home"),
-    path('article/', include('article.urls'), name="article")
-]
+import os
+
+
+if os.getenv("GITHUB_ACTIONS"):
+    urlpatterns = [
+        #distill_path('admin/', admin.site.urls, name="admin"),
+        distill_path('about/',views.about_page, name="about"),
+        distill_path('',views.home_page, name="home"),
+        path('article/', include('article.urls'), name="article")
+    ]
+else:
+    urlpatterns = [
+        distill_path('admin/', admin.site.urls, name="admin"),
+        path('about/',views.about_page),
+        path('',views.home_page),
+        path('article/', include('article.urls'))
+    ]
 
 urlpatterns += staticfiles_urlpatterns()
 

@@ -123,9 +123,10 @@ REPO_NAME = "django_blog_site"
 MEDIA_URL = '/media/'
 
 if os.getenv("GITHUB_ACTIONS"):
-    BASE_URL = f'/{REPO_NAME}'
-    STATIC_URL = f'/{REPO_NAME}/static/'
-    DISTILL_URL_BASE = f"/{REPO_NAME}/"
+    FORCE_SCRIPT_NAME = "/django_blog_site"
+    BASE_URL = f'{FORCE_SCRIPT_NAME}'
+    STATIC_URL = f'/{FORCE_SCRIPT_NAME}/static/'
+    DISTILL_URL_BASE = f"/{FORCE_SCRIPT_NAME}/"
 else:
     BASE_URL = '/'
     STATIC_URL = 'static/'
