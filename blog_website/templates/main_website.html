@@ -3,6 +3,7 @@
 <!DOCTYPE html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Django Blog Site</title>
         <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
         <link rel="stylesheet" href="{% static 'home_style.css' %}"/>
         <link rel="stylesheet" href="{% static 'footer_style.css' %}"/>
@@ -13,9 +14,9 @@
         <div class="header">
             <a href="/" class="logo">Blogger</a>
             <div class="header-right">
-                <a class="home" href="/">Home</a>
-                <a class="/article" href="article">Articles</a>
-                <a href="/about">About</a>
+                <a class="home" href="{{ BASE_URL }}">Home</a>
+                <a class="article" href="{{ BASE_URL }}article">Articles</a>
+                <a href="{{ BASE_URL }}about">About</a>
             </div>
         </div>
 

@@ -7,7 +7,7 @@
     {% for article in articles %}
     <div class="articles_box">
         <div class="article_body"  >
-            <a href="{{article.slug}}">
+            <a href="{{ BASE_URL }}article/{{article.slug}}">
             <h2 class="article_minimal_title"> {{ article.title }} </h2>
             <div class="horizondal-object">
                 <div class="date_position_minimal" >
