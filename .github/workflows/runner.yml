@@ -41,6 +41,7 @@ jobs:
           python manage.py collectstatic --noinput
           python manage.py distill-local dist --quiet --collectstatic --force
           mv -f ./dist/django_blog_site/static dist/
+          mv -f ./dist/django_blog_site/media dist
 
       - name: Upload Static Files Artifact
         uses: actions/upload-pages-artifact@v3
