@@ -119,30 +119,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-REPO_NAME = "django_blog_site"
-MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_ROOT = os.path.join(BASE_DIR ,'media')
+DISTILL_DIR = os.path.join(BASE_DIR, 'dist')
 
 if os.getenv("GITHUB_ACTIONS"):
     FORCE_SCRIPT_NAME = "/django_blog_site"
-    BASE_URL = f'{FORCE_SCRIPT_NAME}'
-    STATIC_URL = f'/{FORCE_SCRIPT_NAME}/static/'
-    DISTILL_URL_BASE = f"/{FORCE_SCRIPT_NAME}/"
+    BASE_URL = FORCE_SCRIPT_NAME
+    STATIC_URL = f"{FORCE_SCRIPT_NAME}/static/"
+    MEDIA_URL = f"{FORCE_SCRIPT_NAME}/media/"
+    DISTILL_URL_BASE = f"{FORCE_SCRIPT_NAME}/"
 else:
     BASE_URL = '/'
     STATIC_URL = 'static/'
-    DISTILL_URL_BASE = "/"
     MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
 )
-
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-
-
-MEDIA_ROOT = os.path.join(BASE_DIR ,'media')
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
