@@ -17,7 +17,7 @@ if os.getenv("GITHUB_ACTIONS"):
     ]
 else:
     urlpatterns = [
-        distill_path('admin/', admin.site.urls, name="admin"),
+        path('admin/', admin.site.urls),
         path('about/',views.about_page, name="about"),
         path('',views.home_page, name="home"),
         path('article/', include('article.urls'))
