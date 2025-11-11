@@ -1,9 +1,10 @@
 {% extends 'main_website.html' %}
+{% load custom_tags %}
 
 {% block content %}
 
 <div class="article">
-    <img class="article_image" src={{ article.image.url }}>
+    <img class="article_image" src={% base_url %}{{ article.image.url }}>
     <div class="article_title">{{ article.title }}</div>
         <div class="date_position" >
             <div class="article_date_box">
