@@ -127,7 +127,7 @@ DISTILL_DIR = os.path.join(BASE_DIR, 'dist')
 
 if os.getenv("GITHUB_ACTIONS"):
     FORCE_SCRIPT_NAME = "/django_blog_site"
-    BASE_URL = FORCE_SCRIPT_NAME
+    BASE_URL = FORCE_SCRIPT_NAME + '/'
     STATIC_URL = f"{FORCE_SCRIPT_NAME}/static/"
     MEDIA_URL = f"{FORCE_SCRIPT_NAME}/media/"
     DISTILL_URL_BASE = f"{FORCE_SCRIPT_NAME}/"
