@@ -11,16 +11,15 @@ import os
 
 if os.getenv("GITHUB_ACTIONS"):
     urlpatterns = [
-        #distill_path('admin/', admin.site.urls, name="admin"),
         distill_path('about/',views.about_page, name="about"),
         distill_path('',views.home_page, name="home"),
-        path('article/', include('article.urls'), name="article")
+        path('article/', include('article.urls'), name="article_list")
     ]
 else:
     urlpatterns = [
         distill_path('admin/', admin.site.urls, name="admin"),
-        path('about/',views.about_page),
-        path('',views.home_page),
+        path('about/',views.about_page, name="about"),
+        path('',views.home_page, name="home"),
         path('article/', include('article.urls'))
     ]
 

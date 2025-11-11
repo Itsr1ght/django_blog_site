@@ -30,6 +30,6 @@ if os.getenv("GITHUB_ACTIONS"):
     ]
 else:
     urlpatterns = [
-        path('',views.article_list),
-        path('<slug>',views.article_page )
+        path('',views.article_list, name="article_list"),
+        path('<slug>',views.article_page, name="article_page")
     ]
